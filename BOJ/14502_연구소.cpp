@@ -18,11 +18,11 @@ struct Info
 
 int n, m;
 int map[MAX][MAX];
-int copy_map[MAX][MAX];
 queue<Info> virus;
 Info dir[4] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
-int mx = 0;
+int mx;
 
+// map print
 void print(int arr[][MAX])
 {
 	cout << endl;
@@ -35,10 +35,37 @@ void print(int arr[][MAX])
 		cout << endl;
 	}
 }
+// count safeZone
+void countSafezone(int arr[][MAX])
+{
+	int cnt = 0;
+	for (int y = 0; y < n; y++)
+	{
+		for (int x = 0; x < m; x++)
+		{
+			if (arr[y][x] == 0)
+				cnt++;
+		}
+	}
+
+	if (mx < cnt)
+		mx = cnt;
+}
+// array copy
+void copy(int origin[][MAX], int copy[][MAX] )
+{
+	memset(copy, 0, sizeof(copy));
+
+	for (int y = 0; y < n; y++)
+		for (int x = 0; x < m; x++)
+			copy[y][x] = origin[y][x];
+}
+// spread virus
 void BFS()
 {
 	queue<Info> q;
 
+	// all virus spread at the same time
 	int virus_cnt = virus.size();
 	for (int i = 0; i < virus_cnt; i++)
 	{
@@ -48,50 +75,29 @@ void BFS()
 	}
 
 	int arr[MAX][MAX];
-	for (int y = 0; y < n; y++)
-	{
-		for (int x = 0; x < m; x++)
-		{
-			arr[y][x] = copy_map[y][x];
-		}
-	}
+	copy(map, arr);
 
 	while (!q.empty())
 	{
 		Info now = q.front(); q.pop();
-
+		Info next;
 		for (int i = 0; i < 4; i++)
 		{
-			int nx = now.x + dir[i].x;
-			int ny = now.y + dir[i].y;
+			next.x = now.x + dir[i].x;
+			next.y = now.y + dir[i].y;
 
-			if (nx < 0 || ny < 0 || nx >= m || ny >= n)
+			if (next.x < 0 || next.y < 0 || next.x >= m || next.y >= n)
 				continue;
-			if (arr[ny][nx] != 0)
+			if (arr[next.y][next.x] != 0)
 				continue;
 
-			q.push({ nx, ny });
-			arr[ny][nx] = 2;
+			q.push(next);
+			arr[next.y][next.x] = 2;
 		}
 	}
-
-	int cnt = 0;
-
-	for (int y = 0; y < n; y++)
-	{
-		for (int x = 0; x < m; x++)
-		{
-			if (arr[y][x] == 0)
-				cnt++;
-		}
-	}
-	//print(arr);
-	//cout << cnt << endl;
-	//cout << endl;
-	if (mx < cnt)
-		mx = cnt;
+	countSafezone(arr);
 }
-
+// wall erating
 void DFS(int startX, int startY, int cnt)
 {
 	if (cnt == 3)
@@ -104,31 +110,24 @@ void DFS(int startX, int startY, int cnt)
 	{
 		for (int x = startX; x < m; x++)
 		{
-			if (copy_map[y][x] == 0)
+			if (map[y][x] == 0)
 			{
-				copy_map[y][x] = 1;
+				map[y][x] = 1;
 
 				DFS(x, y, cnt + 1);
 
-				copy_map[y][x] = 0;
+				map[y][x] = 0;
 			}
 		}
 		startX = 0;
 	}
 }
-
-void map_Copy()
+void solve()
 {
-	memset(copy_map, 0, sizeof(copy_map));
-
-	for (int y = 0; y < n; y++)
-		for (int x = 0; x < m; x++)
-			copy_map[y][x] = map[y][x];
+	DFS(0, 0, 0);
 }
-int main()
+void input()
 {
-	ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
-
 	cin >> n >> m;
 
 	for (int y = 0; y < n; y++)
@@ -140,9 +139,14 @@ int main()
 				virus.push({ x,y });
 		}
 	}
-	map_Copy();
-	DFS(0, 0, 0);
+}
+int main()
+{
+	ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 
+	input();
+	solve();
+	
 	cout << mx << '\n';
 	return 0;
 }

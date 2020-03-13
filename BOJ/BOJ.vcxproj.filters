@@ -16,6 +16,12 @@
     <Filter Include="소스 파일\14000-14999">
       <UniqueIdentifier>{ea87065f-f0d2-4f59-b575-60116422ffef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\15000-15999">
+      <UniqueIdentifier>{2b063796-73ea-450f-a395-21c84e4a9945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\17000-17999">
+      <UniqueIdentifier>{95dde2f8-613a-4ee2-825a-b0e9875df201}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -23,6 +29,12 @@
     </ClCompile>
     <ClCompile Include="14502_연구소.cpp">
       <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="15685_드래곤커브.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
+    <ClCompile Include="17837_새로운게임2.cpp">
+      <Filter>소스 파일\17000-17999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
