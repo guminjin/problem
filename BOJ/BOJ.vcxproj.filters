@@ -36,5 +36,11 @@
     <ClCompile Include="17837_새로운게임2.cpp">
       <Filter>소스 파일\17000-17999</Filter>
     </ClCompile>
+    <ClCompile Include="15683_감시.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
+    <ClCompile Include="14889_스타트와 링크.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
