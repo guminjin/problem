@@ -45,5 +45,11 @@
     <ClCompile Include="14500_테트로미노.cpp">
       <Filter>소스 파일\14000-14999</Filter>
     </ClCompile>
+    <ClCompile Include="14891_톱니바퀴.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="15686_치킨배달.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

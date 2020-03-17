@@ -22,6 +22,7 @@ int paper[MAX][MAX];
 bool visited[MAX][MAX];
 XY dir[4] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
 
+// ¤Çshape check
 void check(XY start)
 {
 	int shapeX[4][4];
