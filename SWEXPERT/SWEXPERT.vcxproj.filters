@@ -27,6 +27,12 @@
     <ClCompile Include="0.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="3752_가능한시험점수.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
+    <ClCompile Include="1824_프로그램검증.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
