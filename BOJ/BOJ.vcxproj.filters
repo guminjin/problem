@@ -22,6 +22,9 @@
     <Filter Include="소스 파일\17000-17999">
       <UniqueIdentifier>{95dde2f8-613a-4ee2-825a-b0e9875df201}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\13000-13999">
+      <UniqueIdentifier>{426202f9-5d74-4d15-ad66-db7df3feecc1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="14888_연산자끼워넣기.cpp">
       <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="13458_시험감독.cpp">
+      <Filter>소스 파일\13000-13999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

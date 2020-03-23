@@ -84,7 +84,8 @@ void spreadGR()
 		{
 			if (arr[y][x] == 3 || arr[y][x] == 4)
 			{				
-				cout << &posVisited[12] << " " << &garVisited[y][x].visit << endl;
+				if(&posVisited[12] == &garVisited[y][x].visit)
+					cout << &posVisited[12] << " " << &garVisited[y][x].visit << endl;
 				garVisited[y][x].visit = true;
 				garVisited[y][x].color = arr[y][x];
 				garVisited[y][x].time = 0;
