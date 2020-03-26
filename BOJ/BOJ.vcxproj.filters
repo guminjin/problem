@@ -63,5 +63,8 @@
     <ClCompile Include="13458_시험감독.cpp">
       <Filter>소스 파일\13000-13999</Filter>
     </ClCompile>
+    <ClCompile Include="17472_다리만들기2.cpp">
+      <Filter>소스 파일\17000-17999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
