@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\13000-13999">
       <UniqueIdentifier>{426202f9-5d74-4d15-ad66-db7df3feecc1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\1000-1999">
+      <UniqueIdentifier>{100d772d-b551-4663-89c9-efe302976680}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -65,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="17472_다리만들기2.cpp">
       <Filter>소스 파일\17000-17999</Filter>
+    </ClCompile>
+    <ClCompile Include="1922_네트워크연결.cpp">
+      <Filter>소스 파일\1000-1999</Filter>
+    </ClCompile>
+    <ClCompile Include="1197_최소스패닝트리.cpp">
+      <Filter>소스 파일\1000-1999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
