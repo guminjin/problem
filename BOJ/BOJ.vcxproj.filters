@@ -28,6 +28,9 @@
     <Filter Include="소스 파일\1000-1999">
       <UniqueIdentifier>{100d772d-b551-4663-89c9-efe302976680}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\4000-4999">
+      <UniqueIdentifier>{eb47d715-15ef-4287-ad3f-3a5dc8286af1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="1197_최소스패닝트리.cpp">
       <Filter>소스 파일\1000-1999</Filter>
+    </ClCompile>
+    <ClCompile Include="4195_친구네트워크.cpp">
+      <Filter>소스 파일\4000-4999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
