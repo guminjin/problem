@@ -34,6 +34,12 @@
     <Filter Include="소스 파일\12000-12999">
       <UniqueIdentifier>{1f381633-02e3-4688-a353-22f087721b4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\3000-3999">
+      <UniqueIdentifier>{1705e0e0-399b-483f-9d6c-d22fc0c65a07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\18000-18999">
+      <UniqueIdentifier>{a1e33619-c761-460f-97e7-84d2bdd763e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -87,8 +93,14 @@
     <ClCompile Include="12100_2048.cpp">
       <Filter>소스 파일\12000-12999</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="3190_뱀.cpp">
+      <Filter>소스 파일\3000-3999</Filter>
+    </ClCompile>
+    <ClCompile Include="18809_Gaaaaaaaaaarden.cpp">
+      <Filter>소스 파일\18000-18999</Filter>
+    </ClCompile>
+    <ClCompile Include="18808_스티커붙이기.cpp">
+      <Filter>소스 파일\18000-18999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
