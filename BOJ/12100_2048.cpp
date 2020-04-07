@@ -10,16 +10,16 @@ typedef long long ll;
 
 const int MAX = 20 + 1;	
 
-int n;
+int inning;
 int map[MAX][MAX];
 int mx;
 
 // 배열을 복사
 void copyMap(int origin[][MAX], int copy[][MAX])
 {
-	for (int y = 1; y <= n; y++)
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
 			copy[y][x] = origin[y][x];
 		}
@@ -29,9 +29,9 @@ void copyMap(int origin[][MAX], int copy[][MAX])
 // 최대값 찾기
 void maxValue()
 {
-	for (int y = 1; y <= n; y++)
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
 			if (mx < map[y][x])
 				mx = map[y][x];
@@ -44,10 +44,10 @@ void removeZero()
 {
 	int temp[MAX][MAX];
 	memset(temp, 0, sizeof(temp));
-	for (int x = 1; x <= n; x++)
+	for (int x = 1; x <= inning; x++)
 	{
 		int idx = 1;
-		for (int y = 1; y <= n; y++)
+		for (int y = 1; y <= inning; y++)
 		{
 			if (!map[y][x])
 				continue;
@@ -63,11 +63,11 @@ void moveUp()
 {
 	removeZero();
 
-	for (int x = 1; x <= n; x++)
+	for (int x = 1; x <= inning; x++)
 	{
-		for (int y = 1; y <= n; y++)
+		for (int y = 1; y <= inning; y++)
 		{
-			if (y >= n)
+			if (y >= inning)
 				break;
 			if (map[y][x] != map[y + 1][x])
 				continue;
@@ -85,11 +85,11 @@ void rotate()
 {
 	int temp[MAX][MAX];
 
-	for (int y = 1; y <= n; y++)
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
-			temp[y][x] = map[n - x + 1][y];
+			temp[y][x] = map[inning - x + 1][y];
 		}
 	}
 
@@ -121,10 +121,10 @@ void dfs(int cnt)
 // 입력
 void input()
 {
-	cin >> n;
-	for (int y = 1; y <= n; y++)
+	cin >> inning;
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
 			cin >> map[y][x];
 		}

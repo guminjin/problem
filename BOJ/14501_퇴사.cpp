@@ -15,7 +15,7 @@ struct INFO
 	int pay;
 };
 
-int n;
+int inning;
 INFO day[MAX_DAY];
 int mx;
 
@@ -24,31 +24,31 @@ void func1(int idx, int value)
 	INFO now = day[idx];
 	int nextIdx = idx + now.time;
 	
-	if (nextIdx > n)
+	if (nextIdx > inning)
 	{
 		// in time, consult can finish
-		if (nextIdx - 1 == n)
+		if (nextIdx - 1 == inning)
 			value += day[idx].pay;
 
 		mx = max(mx, value);
 		return;
 	}
-	for (int i = nextIdx - 1; i <= n; i++)
+	for (int i = nextIdx - 1; i <= inning; i++)
 	{
 		func1(i + 1, value + now.pay);
 	}	
 }
 void solution()
 {
-	for (int i = 1; i <= n; i++)
+	for (int i = 1; i <= inning; i++)
 		func1(i, 0);
 
 	cout << mx << '\n';
 }
 void input()
 {
-	cin >> n;
-	for (int i = 1; i <= n; i++)
+	cin >> inning;
+	for (int i = 1; i <= inning; i++)
 	{
 		INFO t;
 		cin >> t.time >> t.pay;

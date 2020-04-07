@@ -12,7 +12,7 @@ typedef long long ll;
 const int MAX = 100;
 
 int t;
-int n;
+int inning;
 int result;
 int grade[MAX];
 int total[MAX*MAX + 1];	// 나올수 있는 점수의 최대값 만큼 배열크기 설정
@@ -31,7 +31,7 @@ void cnt()
 void solve()
 {
 	// n가지 점수의 개수를 모두 확인
-	for (int i = 0; i<n; i++)
+	for (int i = 0; i<inning; i++)
 	{
 		for (int j = sum; j >= 0; j--)
 		{
@@ -47,8 +47,8 @@ void solve()
 // 입력
 void input()
 {
-	cin >> n;
-	for (int x = 0; x < n; x++)
+	cin >> inning;
+	for (int x = 0; x < inning; x++)
 	{
 		cin >> grade[x];
 

@@ -11,7 +11,7 @@ typedef long long ll;
 const int MAX = 11;
 const int INF = 987654321;
 
-int n;
+int inning;
 int number[MAX];
 int oper[4];			// +, -, *, / count
 int cal[MAX - 1];		// each operation
@@ -148,7 +148,7 @@ void solution()
 
 void solve(int idx, int value)
 {
-	if (idx == n - 1)
+	if (idx == inning - 1)
 	{
 		mn = min(mn, value);
 		mx = max(mx, value);
@@ -181,8 +181,8 @@ void solve(int idx, int value)
 }
 void input()
 {
-	cin >> n;
-	for (int i = 0; i < n; i++)
+	cin >> inning;
+	for (int i = 0; i < inning; i++)
 	{
 		cin >> number[i];
 	}

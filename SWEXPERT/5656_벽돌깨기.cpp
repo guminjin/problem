@@ -21,7 +21,7 @@ struct XY
 };
 
 int tc;
-int n, garo, sero;
+int inning, garo, sero;
 int brick[MAX_sero][MAX_garo];
 int visited[MAX_sero][MAX_garo];
 XY dir[4] = { { -1, 0 },{ 1, 0 },{ 0, -1 },{ 0, 1 } };
@@ -145,7 +145,7 @@ void breakBrick(XY now, bool flg)
 // 벽돌을 아래로 내림
 void dfs(XY xy, int cnt)
 {
-	if (cnt == n)
+	if (cnt == inning)
 	{
 		countBrick();
 		return;
@@ -191,7 +191,7 @@ void solve(int i)
 // 입력
 void input()
 {
-	cin >> n >> garo >> sero;
+	cin >> inning >> garo >> sero;
 	for (int y = 0; y < sero; y++)
 	{
 		for (int x = 0; x < garo; x++)

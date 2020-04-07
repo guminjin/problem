@@ -26,7 +26,7 @@ struct COMPUTER
 	}
 };
 
-int n, m;		// 컴퓨터개수, 연결된 선의 개수	
+int inning, m;		// 컴퓨터개수, 연결된 선의 개수	
 ll result;		// 총 연결 비용
 
 COMPUTER computer[MAX_LINE];	// 컴퓨터 정보
@@ -70,7 +70,7 @@ void solve()
 	result = 0;
 
 	// 부모노드 초기화
-	for (int i = 1; i <= n; i++)
+	for (int i = 1; i <= inning; i++)
 		parent[i] = i;
 
 	for (int i = 0; i < m; i++)
@@ -92,7 +92,7 @@ void input()
 {
 	int idx = 0;
 
-	cin >> n >> m;
+	cin >> inning >> m;
 	for (int i = 0; i < m; i++)
 	{
 		int a, b, c;

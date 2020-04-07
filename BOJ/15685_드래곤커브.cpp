@@ -20,7 +20,7 @@ struct XY
 	int y, x;
 };
 
-int n, k;
+int inning, k;
 int map[MAX][MAX];
 CHESS chess[CHESS_MAX];
 vector<int> v[MAX][MAX];
@@ -34,9 +34,9 @@ void print()
 	{
 		cout << i << "¹ø - y:" << chess[i].y << ", x:" << chess[i].x << ", dir:" << chess[i].dir << endl;
 	}
-	for (int y = 1; y <= n; y++)
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
 			int s = v[y][x].size();
 			if (s == 0)
@@ -58,7 +58,7 @@ void print()
 // chess x,y range check
 bool checkRange(XY lo)
 {
-	if (lo.x<1 || lo.y<1 || lo.y>n || lo.x>n)
+	if (lo.x<1 || lo.y<1 || lo.y>inning || lo.x>inning)
 		return false;
 	return true;
 }
@@ -198,10 +198,10 @@ void solution()
 }
 void input()
 {
-	cin >> n >> k;
+	cin >> inning >> k;
 
-	for (int y = 1; y <= n; y++)
-		for (int x = 1; x <= n; x++)
+	for (int y = 1; y <= inning; y++)
+		for (int x = 1; x <= inning; x++)
 			cin >> map[y][x];
 	for (int i = 1; i <= k; i++)
 	{

@@ -105,5 +105,14 @@
     <ClCompile Include="17143_낚시왕.cpp">
       <Filter>소스 파일\17000-17999</Filter>
     </ClCompile>
+    <ClCompile Include="17406_배열돌리기4.cpp">
+      <Filter>소스 파일\17000-17999</Filter>
+    </ClCompile>
+    <ClCompile Include="3954_인터프리터.cpp">
+      <Filter>소스 파일\3000-3999</Filter>
+    </ClCompile>
+    <ClCompile Include="17281_야구.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -26,7 +26,7 @@ struct INFO
 };
 
 int t;
-int n;
+int inning;
 int garo, sero;
 char program[MAX][MAX];
 bool visited[MAX][MAX][16];

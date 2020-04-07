@@ -20,7 +20,7 @@ struct XY
 };
 
 int t;
-int n;
+int inning;
 int MAP[MAX][MAX];
 int visited[MAX][MAX];
 
@@ -35,9 +35,9 @@ int result;
 // 최소 시간이 걸리는 경로를 찾기위해 INF로 초기화
 void init()
 {
-	for (int y = 0; y < n; y++)
+	for (int y = 0; y < inning; y++)
 	{
-		for (int x = 0; x < n; x++)
+		for (int x = 0; x < inning; x++)
 		{
 			visited[y][x] = INF;
 		}
@@ -49,7 +49,7 @@ void solve()
 {
 
 	init();
-	desination.y = desination.x = n - 1;
+	desination.y = desination.x = inning - 1;
 	result = INF;
 
 	queue<XY> q;
@@ -62,7 +62,7 @@ void solve()
 		XY now = q.front(); q.pop();
 		
 		// 도착지에 도착하면 이동시간을 체크
-		if (now.x == n - 1 && now.y == n - 1)
+		if (now.x == inning - 1 && now.y == inning - 1)
 		{
 			result = min(result, now.time);
 			continue;
@@ -78,7 +78,7 @@ void solve()
 			next.time = now.time + MAP[next.y][next.x];
 
 			// 범위 체크
-			if (next.y < 0 || next.x < 0 || next.y >= n || next.x >= n)
+			if (next.y < 0 || next.x < 0 || next.y >= inning || next.x >= inning)
 				continue;
 
 			// next.y, next.x의 도착하는 여러가지 방법 중
@@ -96,10 +96,10 @@ void solve()
 // 입력
 void input()
 {
-	cin >> n;
-	for (int y = 0; y < n; y++)
+	cin >> inning;
+	for (int y = 0; y < inning; y++)
 	{
-		for (int x = 0; x < n; x++)
+		for (int x = 0; x < inning; x++)
 		{
 			char c; cin >> c;
 

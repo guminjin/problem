@@ -16,7 +16,7 @@ struct Info
 	int x, y;
 };
 
-int n, m;
+int inning, m;
 int map[MAX][MAX];
 queue<Info> virus;
 Info dir[4] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
@@ -26,7 +26,7 @@ int mx;
 void print(int arr[][MAX])
 {
 	cout << endl;
-	for (int y = 0; y < n; y++)
+	for (int y = 0; y < inning; y++)
 	{
 		for (int x = 0; x < m; x++)
 		{
@@ -39,7 +39,7 @@ void print(int arr[][MAX])
 void countSafezone(int arr[][MAX])
 {
 	int cnt = 0;
-	for (int y = 0; y < n; y++)
+	for (int y = 0; y < inning; y++)
 	{
 		for (int x = 0; x < m; x++)
 		{
@@ -56,7 +56,7 @@ void copy(int origin[][MAX], int copy[][MAX] )
 {
 	memset(copy, 0, sizeof(copy));
 
-	for (int y = 0; y < n; y++)
+	for (int y = 0; y < inning; y++)
 		for (int x = 0; x < m; x++)
 			copy[y][x] = origin[y][x];
 }
@@ -86,7 +86,7 @@ void BFS()
 			next.x = now.x + dir[i].x;
 			next.y = now.y + dir[i].y;
 
-			if (next.x < 0 || next.y < 0 || next.x >= m || next.y >= n)
+			if (next.x < 0 || next.y < 0 || next.x >= m || next.y >= inning)
 				continue;
 			if (arr[next.y][next.x] != 0)
 				continue;
@@ -106,7 +106,7 @@ void DFS(int startX, int startY, int cnt)
 		return;
 	}
 
-	for (int y = startY; y < n; y++)
+	for (int y = startY; y < inning; y++)
 	{
 		for (int x = startX; x < m; x++)
 		{
@@ -128,9 +128,9 @@ void solve()
 }
 void input()
 {
-	cin >> n >> m;
+	cin >> inning >> m;
 
-	for (int y = 0; y < n; y++)
+	for (int y = 0; y < inning; y++)
 	{
 		for (int x = 0; x < m; x++)
 		{

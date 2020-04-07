@@ -22,7 +22,7 @@ struct INFO
 	int dir;
 };
 
-int n;
+int inning;
 deque<int> deq[5];		// wheel status
 bool visited[5];		// wheel visited check 
 int turn[5];			// wheel turn check
@@ -138,8 +138,8 @@ void input()
 		for (int j = 0; j < s.length(); j++)
 			deq[i].push_back((s[j] - '0'));
 	}
-	cin >> n;
-	for (int i = 0; i < n; i++)
+	cin >> inning;
+	for (int i = 0; i < inning; i++)
 	{
 		int num, dir;
 		cin >> num >> dir;

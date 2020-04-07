@@ -24,7 +24,7 @@ struct SNAKE
 	int len;
 };
 
-int n, appleCnt, dirCnt;
+int inning, appleCnt, dirCnt;
 int map[MAX_N][MAX_N];
 DIR dir[MAX_N];
 
@@ -54,7 +54,7 @@ void solve()
 		next.len = now.len;
 
 		// 진행방향으로 이동 후 벽을 만났는지 확인
-		if (next.y<1 || next.x<1 || next.y>n || next.x>n)
+		if (next.y<1 || next.x<1 || next.y>inning || next.x>inning)
 			break;
 
 		// 해당 위치에 사과과 없다면
@@ -134,7 +134,7 @@ void input()
 {
 	memset(map, 0, sizeof(map));
 
-	cin >> n >> appleCnt;
+	cin >> inning >> appleCnt;
 	// map의 사과의 위치에 1을 입력 
 	for (int i = 1; i <= appleCnt; i++)
 	{

@@ -12,15 +12,15 @@ typedef long long ll;
 const int MAX = 1000;
 const double INF = 1e20;
 
-int n, l;
+int inning, l;
 int cost[MAX];
 double result;
 
 void solve()
 {
-	for (int j = l; j <= n; j++)
+	for (int j = l; j <= inning; j++)
 	{
-		for (int i = 0; i <= n - j; i++)
+		for (int i = 0; i <= inning - j; i++)
 		{
 			double sum = 0;
 
@@ -35,9 +35,9 @@ void solve()
 }
 void input()
 {
-	cin >> n >> l;
+	cin >> inning >> l;
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < inning; i++)
 		cin >> cost[i];
 }
 

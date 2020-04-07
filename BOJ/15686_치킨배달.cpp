@@ -28,7 +28,7 @@ struct XY
 	int y, x;
 };
 
-int n, m;
+int inning, m;
 int MAP[MAX][MAX];
 bool visit[MAX][MAX];
 XY chicken[CHICKEN_MAX];
@@ -66,7 +66,7 @@ void bfs(HOME &start)
 			next.y = now.y + dir[i].y;
 			next.x = now.x + dir[i].x;
 
-			if (next.y<1 || next.x<1 || next.y>n || next.x>n)
+			if (next.y<1 || next.x<1 || next.y>inning || next.x>inning)
 				continue;
 			if (visit[next.y][next.x])
 				continue;
@@ -136,10 +136,10 @@ void solve()
 }
 void input()
 {
-	cin >> n >> m;
-	for (int y = 1; y <= n; y++)
+	cin >> inning >> m;
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
 			int num; cin >> num;
 			MAP[y][x] = num;

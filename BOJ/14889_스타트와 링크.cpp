@@ -12,7 +12,7 @@ typedef long long ll;
 const int MAX = 20 + 1;
 const int INF = 987654321;
 
-int n;
+int inning;
 int mn = INF;
 int S[MAX][MAX];
 bool person[MAX];
@@ -23,9 +23,9 @@ void calAbility()
 	int start = 0;
 	int link = 0;
 
-	for (int y = 1; y <= n; y++)
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = y; x <= n; x++)
+		for (int x = y; x <= inning; x++)
 		{
 			if (x == y)
 				continue;
@@ -51,12 +51,12 @@ void calAbility()
 // team select
 void dfs(int num, int cnt)
 {
-	if (cnt == (n / 2))
+	if (cnt == (inning / 2))
 	{
 		calAbility();
 		return;
 	}
-	for (int i = num; i <= n; i++)
+	for (int i = num; i <= inning; i++)
 	{
 		if (person[i])
 			continue;
@@ -68,10 +68,10 @@ void dfs(int num, int cnt)
 }
 void input()
 {
-	cin >> n;
-	for (int y = 1; y <= n; y++)
+	cin >> inning;
+	for (int y = 1; y <= inning; y++)
 	{
-		for (int x = 1; x <= n; x++)
+		for (int x = 1; x <= inning; x++)
 		{
 			cin >> S[y][x];
 		}
