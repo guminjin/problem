@@ -111,8 +111,14 @@
     <ClCompile Include="3954_인터프리터.cpp">
       <Filter>소스 파일\3000-3999</Filter>
     </ClCompile>
+    <ClCompile Include="17135_캐슬디펜스.cpp">
+      <Filter>소스 파일\17000-17999</Filter>
+    </ClCompile>
     <ClCompile Include="17281_야구.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\17000-17999</Filter>
+    </ClCompile>
+    <ClCompile Include="17136_색종이붙이기.cpp">
+      <Filter>소스 파일\17000-17999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
