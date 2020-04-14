@@ -40,6 +40,9 @@
     <Filter Include="소스 파일\18000-18999">
       <UniqueIdentifier>{a1e33619-c761-460f-97e7-84d2bdd763e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\16000-16999">
+      <UniqueIdentifier>{a4d138fc-1550-403e-a0bb-2f7e6e436111}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -122,6 +125,12 @@
     </ClCompile>
     <ClCompile Include="17070_파이프 옯기기.cpp">
       <Filter>소스 파일\17000-17999</Filter>
+    </ClCompile>
+    <ClCompile Include="16637_괄호추가하기.cpp">
+      <Filter>소스 파일\16000-16999</Filter>
+    </ClCompile>
+    <ClCompile Include="13023_ABCDE.cpp">
+      <Filter>소스 파일\13000-13999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
