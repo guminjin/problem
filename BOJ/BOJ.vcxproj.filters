@@ -43,6 +43,9 @@
     <Filter Include="소스 파일\16000-16999">
       <UniqueIdentifier>{a4d138fc-1550-403e-a0bb-2f7e6e436111}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\11000-11999">
+      <UniqueIdentifier>{4d04203f-8192-4d94-a5e5-707b4727f46d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -131,6 +134,12 @@
     </ClCompile>
     <ClCompile Include="13023_ABCDE.cpp">
       <Filter>소스 파일\13000-13999</Filter>
+    </ClCompile>
+    <ClCompile Include="11724_연결요소의개수.cpp">
+      <Filter>소스 파일\11000-11999</Filter>
+    </ClCompile>
+    <ClCompile Include="1707_이분그래프.cpp">
+      <Filter>소스 파일\1000-1999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
