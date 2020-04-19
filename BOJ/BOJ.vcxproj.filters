@@ -141,5 +141,11 @@
     <ClCompile Include="1707_이분그래프.cpp">
       <Filter>소스 파일\1000-1999</Filter>
     </ClCompile>
+    <ClCompile Include="4963_섬의 개수.cpp">
+      <Filter>소스 파일\4000-4999</Filter>
+    </ClCompile>
+    <ClCompile Include="14226_이모티콘.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
