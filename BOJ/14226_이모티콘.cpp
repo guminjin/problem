@@ -19,17 +19,24 @@ struct INFO
 int n;
 bool time[MAX][MAX];
 
+// 조건 확인
 bool check(INFO next)
 {
+	// 범위 확인
 	if (next.total < 0 || next.copy < 0 || next.total >= MAX || next.copy >= MAX)
 		return false;
+
+	// 스티커 수나 클립보드의 스티커 수가 0인지 확인
 	if (!next.copy || !next.total)
 		return false;
+
+	// 이미 확인한 조건인지 확인
 	if (time[next.total][next.copy])
 		return false;
 
 	return true;
 }
+
 int bfs()
 {
 	queue<INFO> q;
@@ -42,6 +49,7 @@ int bfs()
 		if (now.total == n)
 			return now.sec;
 		
+		// 복사, 붙여넣기, 하나 삭제 세가지 경우
 		INFO next[3] = { { now.total, now.total, now.sec + 1 },
 						 { now.total + now.copy, now.copy, now.sec + 1 },
 						 { now.total - 1, now.copy, now.sec + 1 },
@@ -51,6 +59,7 @@ int bfs()
 			if (!check(next[i]))
 				continue;
 
+			// 해당 조건 확인
 			time[next[i].total][next[i].copy] = true;
 			q.push(next[i]);
 		}

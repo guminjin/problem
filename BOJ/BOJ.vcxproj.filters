@@ -147,5 +147,8 @@
     <ClCompile Include="14226_이모티콘.cpp">
       <Filter>소스 파일\14000-14999</Filter>
     </ClCompile>
+    <ClCompile Include="13549_숨바꼭질3.cpp">
+      <Filter>소스 파일\13000-13999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
