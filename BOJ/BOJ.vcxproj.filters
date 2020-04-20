@@ -46,6 +46,9 @@
     <Filter Include="소스 파일\11000-11999">
       <UniqueIdentifier>{4d04203f-8192-4d94-a5e5-707b4727f46d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\2000-2999">
+      <UniqueIdentifier>{fc64206c-c37c-470d-91e1-fcf20695469c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -149,6 +152,12 @@
     </ClCompile>
     <ClCompile Include="13549_숨바꼭질3.cpp">
       <Filter>소스 파일\13000-13999</Filter>
+    </ClCompile>
+    <ClCompile Include="1261_알고스팟.cpp">
+      <Filter>소스 파일\1000-1999</Filter>
+    </ClCompile>
+    <ClCompile Include="2206_벽부수고이동하기.cpp">
+      <Filter>소스 파일\2000-2999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
