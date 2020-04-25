@@ -159,5 +159,11 @@
     <ClCompile Include="2206_벽부수고이동하기.cpp">
       <Filter>소스 파일\2000-2999</Filter>
     </ClCompile>
+    <ClCompile Include="3055_탈출.cpp">
+      <Filter>소스 파일\3000-3999</Filter>
+    </ClCompile>
+    <ClCompile Include="13913_숨바꼭질4.cpp">
+      <Filter>소스 파일\13000-13999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
