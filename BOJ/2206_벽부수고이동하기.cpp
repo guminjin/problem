@@ -18,30 +18,40 @@ struct INFO
 	int y, x;
 	int time;
 	int cnt;
+
+	// time을 기준으로 오름차순 정렬
+	bool operator <(INFO now) const
+	{
+		return time > now.time;
+	}
 };
 
 int garo, sero;
 bool map[MAX][MAX];
 bool visited[2][MAX][MAX];
-vector<pair<int, int>> v;
-int result = INF;
+int result = -1;
 
+// 우, 좌, 상, 하
 int Y[4] = { 0, 0, -1, 1 };
 int X[4] = { 1, -1, 0, 0 }; 
 
 void bfs()
 {
 	memset(visited, 0, sizeof(visited));
-	queue<INFO> q;
-	q.push({ 0, 0, 1, 0 });
+
+	priority_queue<INFO> pq;
+	pq.push({ 0, 0, 1, 0 });
+
 	visited[0][0][0] = visited[1][0][0] = true;
 
-	while (!q.empty())
+	while (!pq.empty())
 	{
-		INFO now = q.front(); q.pop();
+		INFO now = pq.top(); pq.pop();
+		
+		// 목적지 도달시 종료
 		if (now.x == garo - 1 && now.y == sero - 1)
 		{
-			result = min(result, now.time);
+			result = now.time;
 			return;
 		}
 
@@ -53,26 +63,34 @@ void bfs()
 			next.time = now.time + 1;
 			next.cnt = now.cnt;
 
+			// 범위 확인
 			if (next.x < 0 || next.y < 0 || next.x >= garo || next.y >= sero)
 				continue;
+			// 방문한 배열 체크
 			if (visited[next.cnt][next.y][next.x])
 				continue;
+			// 벽을 부술 수 있는지 확인
 			if (map[next.y][next.x] && next.cnt)
 				continue;
+			// 벽을 부술 수 있다면
 			if (map[next.y][next.x] && !next.cnt)
 			{
+				// 벽을 부순 수 증가
 				next.cnt++;
-				q.push(next);
+				// 벽을 부수고 난 후의 위치 방문 체크
 				visited[next.cnt][next.y][next.x] = true;
+
+				pq.push(next);
 				continue;
 			}
 			
 			visited[next.cnt][next.y][next.x] = true;
-			q.push(next);
+			pq.push(next);
 		}
 	}
 }
 
+// 입력
 void input()
 {
 	cin >> sero >> garo;
@@ -82,9 +100,6 @@ void input()
 		{
 			char c; cin >> c;
 			map[y][x] = c - '0';
-			
-			if (map[y][x])
-				v.push_back(make_pair(y, x));
 		}
 	}
 }
@@ -95,9 +110,7 @@ int main()
 
 	input();
 	bfs();
-	if (result == INF)
-		cout << "-1\n";
-	else
-		cout << result << '\n';
+
+	cout << result << '\n';
 	return 0;
 }

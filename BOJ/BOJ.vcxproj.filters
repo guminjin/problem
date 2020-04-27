@@ -49,6 +49,9 @@
     <Filter Include="소스 파일\2000-2999">
       <UniqueIdentifier>{fc64206c-c37c-470d-91e1-fcf20695469c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\9000-9999">
+      <UniqueIdentifier>{bf5e6f0f-931c-42fe-a5d0-7cf89894ac08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -164,6 +167,15 @@
     </ClCompile>
     <ClCompile Include="13913_숨바꼭질4.cpp">
       <Filter>소스 파일\13000-13999</Filter>
+    </ClCompile>
+    <ClCompile Include="9376_탈옥.cpp">
+      <Filter>소스 파일\9000-9999</Filter>
+    </ClCompile>
+    <ClCompile Include="9328_열쇠.cpp">
+      <Filter>소스 파일\9000-9999</Filter>
+    </ClCompile>
+    <ClCompile Include="4991_로봇청소기.cpp">
+      <Filter>소스 파일\4000-4999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

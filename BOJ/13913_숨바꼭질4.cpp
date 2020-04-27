@@ -9,51 +9,49 @@ using namespace std;
 
 typedef long long ll;
 
-const int MAX = 100000 + 5;
-const int INF = 987654321;
+const int MAX = 100000 + 1;
 
 struct INFO
 {
 	int x;
 	int time;
+	bool operator <(INFO now) const
+	{
+		return time > now.time;
+	}
 };
 
 int n, k;
 bool visited[MAX];
 
-bool checkRange(INFO next)
-{
-	if (next.x<0 || next.x >= MAX)
-		return false;
-	if (visited[next.x])
-		return false;
-
-	return true;
-}
-
 int bfs()
 {
-	queue<INFO> q;
-	q.push({ n, 0 });
+	priority_queue<INFO> pq;
+	pq.push({ n, 0 });
 	visited[n] = true;
 
-	while (!q.empty())
+	while (!pq.empty())
 	{
-		INFO now = q.front(); q.pop();
+		INFO now = pq.top(); pq.pop();
 		if (now.x == k)
 			return now.time;
+
+		// x + 1, x - 1, x * 2 세가지 조건 확인
 		INFO next[3] = { { now.x * 2, now.time } ,
-		{ now.x + 1, now.time + 1 },
-		{ now.x - 1, now.time + 1 }
-		};
+						 { now.x + 1, now.time + 1 },
+						 { now.x - 1, now.time + 1 }
+						};
 
 		for (int i = 0; i < 3; i++)
 		{
-			if (!checkRange(next[i]))
+			if (next[i].x<0 || next[i].x >= MAX)
+				continue;
+			if (visited[next[i].x])
 				continue;
 
+			// 해당 위치에 도달한 시간 저장
 			visited[next[i].x] = true;
-			q.push(next[i]);
+			pq.push(next[i]);
 		}
 	}
 
@@ -62,6 +60,7 @@ int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 
+	// 입력
 	cin >> n >> k;
 	cout << bfs() << '\n';
 

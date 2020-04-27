@@ -33,6 +33,9 @@ vector<XY> water;
 int bfs()
 {
 	queue<INFO> q;
+
+	// 물의 위치를 먼저 큐에 넣고, 고슴도치의 위치를 큐에 넣어준다.
+	// type이 0이면 물, 1이면 고슴도치
 	for (int i = 0; i < water.size(); i++)
 		q.push({ water[i].y, water[i].x, 0, 0 });
 	q.push({ target.y, target.x, 1, 0 });
@@ -43,11 +46,15 @@ int bfs()
 	{
 		INFO now = q.front(); q.pop();
 		INFO next;
+
+		// 고슴도치일 때 
 		if (now.type)
 		{
+			// 목적지에 도착했는지 체크
 			if (map[now.y][now.x] == 'D')
 				return now.time;
 	
+			// 우,좌,하,상 네방향을 모두 확인
 			for (int i = 0; i < 4; i++)
 			{
 				next.x = now.x + dir[i].x;
@@ -55,10 +62,13 @@ int bfs()
 				next.type = 1;
 				next.time = now.time + 1;
 
+				// 범위확인
 				if (next.x < 0 || next.y < 0 || next.x >= garo || next.y >= sero)
 					continue;
+				// 물이거나 돌인지 확인
 				if (map[next.y][next.x] == '*' || map[next.y][next.x] == 'X')
 					continue;
+				// 방문한 위치인지 확인
 				if (visited[next.y][next.x])
 					continue;
 				
@@ -66,8 +76,10 @@ int bfs()
 				q.push(next);
 			}
 		}
+		// 물일 때
 		else
 		{
+			// 우,좌,하,상 네방향을 모두 확인
 			for (int i = 0; i < 4; i++)
 			{
 				next.x = now.x + dir[i].x;
@@ -75,8 +87,10 @@ int bfs()
 				next.type = 0;
 				next.time = now.time + 1;
 
+				// 범위 확인
 				if (next.x < 0 || next.y < 0 || next.x >= garo || next.y >= sero)
 					continue;
+				// 이미 물이 차있거나, 돌인지, 도착지이면 물이 퍼질 수 없다.
 				if (map[next.y][next.x] == '*' || map[next.y][next.x] == 'X' || map[next.y][next.x] == 'D')
 					continue;
 
@@ -87,6 +101,8 @@ int bfs()
 	}
 	return -1;
 }
+
+// 입력
 void input()
 {
 	cin >> sero >> garo;
@@ -96,11 +112,14 @@ void input()
 		{
 			char c; cin >> c;
 			map[y][x] = c;
+
+			// 시작위치 저장
 			if (c == 'S')
 			{
 				target.y = y;
 				target.x = x;
 			}
+			// 물이 차있는 지역 저장
 			else if (c == '*')
 			{
 				water.push_back({ y, x });
