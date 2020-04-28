@@ -17,7 +17,7 @@ struct INFO
 {
 	int y, x;
 	int time;
-	int cnt;
+	int turn;
 
 	// time을 기준으로 오름차순 정렬
 	bool operator <(INFO now) const
@@ -61,30 +61,30 @@ void bfs()
 			next.x = now.x + X[i];
 			next.y = now.y + Y[i];
 			next.time = now.time + 1;
-			next.cnt = now.cnt;
+			next.turn = now.turn;
 
 			// 범위 확인
 			if (next.x < 0 || next.y < 0 || next.x >= garo || next.y >= sero)
 				continue;
 			// 방문한 배열 체크
-			if (visited[next.cnt][next.y][next.x])
+			if (visited[next.turn][next.y][next.x])
 				continue;
 			// 벽을 부술 수 있는지 확인
-			if (map[next.y][next.x] && next.cnt)
+			if (map[next.y][next.x] && next.turn)
 				continue;
 			// 벽을 부술 수 있다면
-			if (map[next.y][next.x] && !next.cnt)
+			if (map[next.y][next.x] && !next.turn)
 			{
 				// 벽을 부순 수 증가
-				next.cnt++;
+				next.turn++;
 				// 벽을 부수고 난 후의 위치 방문 체크
-				visited[next.cnt][next.y][next.x] = true;
+				visited[next.turn][next.y][next.x] = true;
 
 				pq.push(next);
 				continue;
 			}
 			
-			visited[next.cnt][next.y][next.x] = true;
+			visited[next.turn][next.y][next.x] = true;
 			pq.push(next);
 		}
 	}

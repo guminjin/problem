@@ -21,7 +21,7 @@ struct XY
 struct INFO
 {
 	int y, x;	// 숫자의 위치
-	int cnt;	// 몇번째 숫자
+	int turn;	// 몇번째 숫자
 	string s;	// 0-cnt까지의 숫자저장
 };
 
@@ -42,7 +42,7 @@ void BFS(INFO start)
 		INFO next;
 
 		// 7개의 숫자를 모두 선택했다면
-		if (now.cnt == 7)
+		if (now.turn == 7)
 		{
 			s.insert(now.s);	// 중복되는 string은 insert하지 않음
 			continue;
@@ -58,7 +58,7 @@ void BFS(INFO start)
 			if (next.x < 0 || next.y < 0 || next.x >= MAX || next.y >= MAX)
 				continue;
 
-			next.cnt = now.cnt + 1;
+			next.turn = now.turn + 1;
 			next.s = now.s;
 			next.s += (MAP[next.y][next.x] + '0');
 
@@ -79,7 +79,7 @@ void solution()
 			char s = (MAP[y][x] + '0');
 
 			INFO t;
-			t.x = x; t.y = y; t.cnt = 1; t.s = s;
+			t.x = x; t.y = y; t.turn = 1; t.s = s;
 			
 			BFS(t);
 		}

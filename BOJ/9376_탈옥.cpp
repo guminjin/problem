@@ -20,11 +20,11 @@ struct XY
 struct INFO
 {
 	int y, x;
-	int cnt;
+	int turn;
 
 	bool operator <(INFO now) const
 	{
-		return cnt > now.cnt;
+		return turn > now.turn;
 	}
 };
 
@@ -32,7 +32,7 @@ int garo, sero;
 char map[MAX][MAX];
 int arr[3][MAX][MAX];
 bool visited[MAX][MAX];
-XY target[2];
+XY cleaner[2];
 XY dir[4] = { {-1, 0}, {1, 0}, {0, -1}, {0, 1} };
 int result = INF;
 
@@ -51,7 +51,7 @@ void bfs(int idx, XY start)
 		{
 			next.y = now.y + dir[i].y;
 			next.x = now.x + dir[i].x;
-			next.cnt = now.cnt;
+			next.turn = now.turn;
 
 			if (next.y <0 || next.x<0 || next.y >sero + 1 || next.x >garo + 1)
 				continue;
@@ -60,10 +60,10 @@ void bfs(int idx, XY start)
 			if (map[next.y][next.x] == '*')
 				continue;
 			if (map[next.y][next.x] == '#')
-				next.cnt++;
+				next.turn++;
 
 			visited[next.y][next.x] = true;
-			arr[idx][next.y][next.x] = next.cnt;
+			arr[idx][next.y][next.x] = next.turn;
 			q.push(next);
 		}
 	}
@@ -80,7 +80,7 @@ void input()
 			map[y][x] = c;
 
 			if (c == '$')
-				target[idx++] = { y, x };
+				cleaner[idx++] = { y, x };
 		}
 	}
 
@@ -107,8 +107,8 @@ int main()
 		input();
 
 		bfs(0, { 0, 0 });
-		bfs(1, { target[0].y, target[0].x });
-		bfs(2, { target[1].y, target[1].x });
+		bfs(1, { cleaner[0].y, cleaner[0].x });
+		bfs(2, { cleaner[1].y, cleaner[1].x });
 
 		for (int y = 0; y <= sero + 1; y++)
 		{

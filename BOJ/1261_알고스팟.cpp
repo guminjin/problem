@@ -15,12 +15,12 @@ const int INF = 987654321;
 struct INFO
 {
 	int y, x;
-	int cnt;
+	int turn;
 
 	// cnt를 기준으로 오름차순 정렬
 	bool operator< (const INFO now) const
 	{
-		return cnt > now.cnt;
+		return turn > now.turn;
 	}
 };
 
@@ -45,7 +45,7 @@ void bfs()
 		// 도착지에 도달했다면 
 		if (now.x == garo - 1 && now.y == sero - 1)
 		{
-			result = now.cnt;
+			result = now.turn;
 			return;
 		}
 
@@ -54,14 +54,14 @@ void bfs()
 		{
 			next.x = now.x + X[i];
 			next.y = now.y + Y[i];
-			next.cnt = now.cnt;
+			next.turn = now.turn;
 
 			// 범위확인
 			if (next.x < 0 || next.y < 0 || next.x >= garo || next.y >= sero)
 				continue;
 			// 해당 위치에 벽이있다면 벽을 부순 수 증가
 			if (map[next.y][next.x])
-				next.cnt++;
+				next.turn++;
 			// 방문한 위치는 다시 확인하지 않는다.
 			if (time[next.y][next.x])
 				continue;

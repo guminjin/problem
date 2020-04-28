@@ -27,7 +27,7 @@ int garo, sero;
 char map[MAX][MAX];
 int visited[MAX][MAX];
 XY dir[4] = { { 0, 1 },{ 0, -1 },{ 1, 0 },{ -1, 0 } };
-XY target;
+XY cleaner;
 vector<XY> water;
 
 int bfs()
@@ -38,9 +38,9 @@ int bfs()
 	// type이 0이면 물, 1이면 고슴도치
 	for (int i = 0; i < water.size(); i++)
 		q.push({ water[i].y, water[i].x, 0, 0 });
-	q.push({ target.y, target.x, 1, 0 });
+	q.push({ cleaner.y, cleaner.x, 1, 0 });
 	
-	visited[target.y][target.x] = true;
+	visited[cleaner.y][cleaner.x] = true;
 
 	while (!q.empty())
 	{
@@ -116,8 +116,8 @@ void input()
 			// 시작위치 저장
 			if (c == 'S')
 			{
-				target.y = y;
-				target.x = x;
+				cleaner.y = y;
+				cleaner.x = x;
 			}
 			// 물이 차있는 지역 저장
 			else if (c == '*')

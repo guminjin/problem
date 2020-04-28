@@ -26,7 +26,7 @@ struct POINT
 };
 
 int v, e;
-POINT point[MAX_LINE];	// 연결된 두개의 정점과, 비용을 저장하는 배열
+POINT dust[MAX_LINE];	// 연결된 두개의 정점과, 비용을 저장하는 배열
 int parent[MAX_POINT];	// 부모노드 저장 배열
 ll result;				// 최소 비용 변수
 
@@ -74,11 +74,11 @@ void solve()
 	for (int i = 0; i < e; i++)
 	{
 		// 부모노드를 확인
-		if (!checkParent(point[i].p1, point[i].p2))
+		if (!checkParent(dust[i].p1, dust[i].p2))
 		{
 			// 부모노드를 같게 해주고, 선을 연결
-			unionParent(point[i].p1, point[i].p2);
-			result += point[i].cost;
+			unionParent(dust[i].p1, dust[i].p2);
+			result += dust[i].cost;
 		}
 	}
 }
@@ -90,9 +90,9 @@ void input()
 		int a, b, c;
 		cin >> a >> b >> c;
 
-		point[i] = { c, a, b };
+		dust[i] = { c, a, b };
 	}
-	sort(point, point + e);
+	sort(dust, dust + e);
 }
 int main()
 {

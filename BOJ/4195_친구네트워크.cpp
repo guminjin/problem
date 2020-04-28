@@ -15,7 +15,7 @@ const int MAX = 200000 + 10;
 struct INFO
 {
 	int idx;
-	int cnt;
+	int turn;
 };
 
 int t;
@@ -48,12 +48,12 @@ void solve()
 		if (m[s1].idx == 0)
 		{
 			m[s1].idx = idx++;
-			m[s1].cnt = 1;
+			m[s1].turn = 1;
 		}
 		if (m[s2].idx == 0)
 		{
 			m[s2].idx = idx++;
-			m[s2].cnt = 1;
+			m[s2].turn = 1;
 		}
 
 		int p1 = findParent(m[s1].idx);
@@ -68,7 +68,7 @@ void solve()
 			m[p2].cnt += t;
 		}
 
-		cout << max(m[s1].cnt, m[s2].cnt) << '\n';
+		cout << max(m[s1].turn, m[s2].turn) << '\n';
 	}
 }
 void init()
