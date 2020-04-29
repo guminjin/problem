@@ -192,5 +192,8 @@
     <ClCompile Include="15558_점프게임.cpp">
       <Filter>소스 파일\15000-15999</Filter>
     </ClCompile>
+    <ClCompile Include="15653_구슬탈출4.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -38,6 +38,10 @@ bool bfs()
 		if (now.lo == 0) nLo = 1;
 		else nLo = 0;
 
+		// 세가지 행동
+		// 1 : 현재 줄의 x위치에서 +1
+		// 2 : 현재 줄의 x위치에서 -1
+		// 3 : 다른 줄의 x위치에서 +k
 		INFO next[3] = { { now.x + 1, now.lo, now.time + 1 },
 						 { now.x - 1, now.lo, now.time + 1 },
 						 { now.x + k, nLo, now.time + 1 }
@@ -45,10 +49,15 @@ bool bfs()
 
 		for (int i = 0; i < 3; i++) 
 		{
+			// 매초 한칸씩 지워지므로, x의 범위 확인
 			if (next[i].time >= next[i].x)
 				continue;
+
+			// 방문한 위치인지 확인
 			if (visit[next[i].lo][next[i].x])
 				continue;
+
+			// 해당 위치가 0인지 확인
 			if (!map[next[i].lo][next[i].x])
 				continue;
 
@@ -59,8 +68,11 @@ bool bfs()
 
 	return false;
 }
+
+// 입력
 void input()
 {
+	// map을 1로 초기화
 	for (int i = 0; i < 2; i++)
 	{
 		for (int x = 0; x < MAX; x++)

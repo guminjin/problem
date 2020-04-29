@@ -42,6 +42,9 @@
     <ClCompile Include="5656_벽돌깨기.cpp">
       <Filter>소스 파일\모의</Filter>
     </ClCompile>
+    <ClCompile Include="5658_보물상자비밀번호.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
