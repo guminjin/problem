@@ -45,6 +45,15 @@
     <ClCompile Include="5658_보물상자비밀번호.cpp">
       <Filter>소스 파일\모의</Filter>
     </ClCompile>
+    <ClCompile Include="4050_재관이의대량할인.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
+    <ClCompile Include="5653_줄기세포배양.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
+    <ClCompile Include="6109_추억의2048게임.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
