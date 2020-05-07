@@ -58,6 +58,9 @@
     <Filter Include="소스 파일\8000-8999">
       <UniqueIdentifier>{60e66faf-7ec9-497b-b03f-5fc0d91c9cb3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\5000-5999">
+      <UniqueIdentifier>{79ff0afb-1706-41bb-86ae-4393a698726a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="0.cpp">
@@ -194,6 +197,15 @@
     </ClCompile>
     <ClCompile Include="15653_구슬탈출4.cpp">
       <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
+    <ClCompile Include="12886_돌그룹.cpp">
+      <Filter>소스 파일\12000-12999</Filter>
+    </ClCompile>
+    <ClCompile Include="14442_벽부수고이동하기2.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="1600_말이되고픈원숭이.cpp">
+      <Filter>소스 파일\1000-1999</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
