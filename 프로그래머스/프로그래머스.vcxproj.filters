@@ -27,5 +27,8 @@
     <ClCompile Include="불량 사용자.cpp">
       <Filter>소스 파일\2019카카오겨울인턴</Filter>
     </ClCompile>
+    <ClCompile Include="호텔 방 배정.cpp">
+      <Filter>소스 파일\2019카카오겨울인턴</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

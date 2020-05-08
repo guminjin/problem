@@ -15,6 +15,9 @@ void dfs(int start, vector<vector<string>> group, vector<string> list)
 {
 	if (group.size() == start)
 	{
+		if (list.size() != group.size())
+			return;
+
 		string ch = "";
 		sort(list.begin(), list.end());
 		for (int i = 0; i < list.size(); i++)
@@ -24,28 +27,26 @@ void dfs(int start, vector<vector<string>> group, vector<string> list)
 		result.insert(ch);
 		return;
 	}
-	for (int i = start; i < group.size(); i++)
+	
+	for (int j = 0; j < group[start].size(); j++)
 	{
-		for (int j = 0; j < group[i].size(); j++)
+		bool flg = false;
+		for (int k = 0; k < list.size(); k++)
 		{
-			bool flg = false;
-			for (int k = 0; k < list.size(); k++)
+			if (list[k] == group[start][j])
 			{
-				if (list[k] == group[i][j])
-				{
-					flg = true;
-					break;
-				}
+				flg = true;
+				break;
 			}
+		}
 
-			if (!flg)
-			{
-				vector<string> t = list;
+		if (!flg)
+		{
+			vector<string> t = list;
 
-				list.push_back(group[i][j]);
-				dfs(start + 1, group, list);
-				list = t;
-			}
+			list.push_back(group[start][j]);
+			dfs(start + 1, group, list);
+			list = t;
 		}
 	}
 }
@@ -69,9 +70,7 @@ bool compareString(string ban, string user)
 	return true;
 }
 int solution(vector<string> user_id, vector<string> banned_id) 
-{
-	int answer = 0;
-	
+{	
 	vector<vector<string>> v(banned_id.size());
 
 	for (int i = 0; i < banned_id.size(); i++)
@@ -84,15 +83,22 @@ int solution(vector<string> user_id, vector<string> banned_id)
 			v[i].push_back(user_id[j]);
 		}
 	}
-	vector<string> list;
-	dfs(0, v, list);
-	return answer;
+	for (int i = 0; i < v[0].size(); i++)
+	{
+		vector<string> list;
+		list.push_back(v[0][i]);
+		dfs(1, v, list);
+	}
+	return result.size();
 }
 
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 	vector<string> user_id = { "frodo", "fradi", "crodo", "abc123", "frodoc" };
-	vector<string> banned_id = { "fr*d*", "abc1**" };
+	vector<string> banned_id = { "*rodo", "*rodo", "******" };
+
+	cout << solution(user_id, banned_id) << '\n';
+
 	return 0;
 }
