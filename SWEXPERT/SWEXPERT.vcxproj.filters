@@ -54,6 +54,9 @@
     <ClCompile Include="6109_추억의2048게임.cpp">
       <Filter>소스 파일\D4</Filter>
     </ClCompile>
+    <ClCompile Include="5644_무선충전.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
