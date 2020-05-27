@@ -57,6 +57,9 @@
     <ClCompile Include="5644_무선충전.cpp">
       <Filter>소스 파일\모의</Filter>
     </ClCompile>
+    <ClCompile Include="3234_준환이의양팔저울.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
