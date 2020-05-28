@@ -60,6 +60,12 @@
     <ClCompile Include="3234_준환이의양팔저울.cpp">
       <Filter>소스 파일\D4</Filter>
     </ClCompile>
+    <ClCompile Include="3459_승자예측하기.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
+    <ClCompile Include="1868_파핑파핑.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
