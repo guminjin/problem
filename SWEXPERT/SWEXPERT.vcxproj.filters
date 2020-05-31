@@ -66,6 +66,12 @@
     <ClCompile Include="1868_파핑파핑.cpp">
       <Filter>소스 파일\D4</Filter>
     </ClCompile>
+    <ClCompile Include="1226_미로1.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
+    <ClCompile Include="4408_자기방으로돌아가기.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
