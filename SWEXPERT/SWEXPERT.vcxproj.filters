@@ -72,6 +72,9 @@
     <ClCompile Include="4408_자기방으로돌아가기.cpp">
       <Filter>소스 파일\D4</Filter>
     </ClCompile>
+    <ClCompile Include="1486_장훈이의 높은 선반.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">

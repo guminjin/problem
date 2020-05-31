@@ -9,29 +9,11 @@ using namespace std;
 
 typedef long long ll;
 
-struct INFO 
-{
-	int start, des;
-};
+const int MAX = 200 + 2;
 
 int n;
-vector<INFO> v;
+int arr[MAX];
 int mxIdx;
-
-void solve()
-{
-}
-void input()
-{
-	v.clear();
-	
-	cin >> n;
-	for (int i = 0; i < n; i++)
-	{
-		int s, e; cin >> s >> e;
-		v.push_back({ s, e });
-	}
-}
 
 int main()
 {
@@ -42,9 +24,28 @@ int main()
 	int t; cin >> t;
 	for (int tc = 1; tc <= t; tc++)
 	{
-		input();
-		solve();
-		cout << '#' << tc << ' ';
+		memset(arr, 0, sizeof(arr));
+
+		cin >> n;
+		for (int i = 0; i < n; i++)
+		{
+			int a, b; cin >> a >> b;
+			if (a > b)
+				swap(a, b);
+
+			if (a % 2 == 1)
+				a++;
+			if (b % 2 == 1)
+				b++;
+
+			for(int i = a/2; i<=b/2; i++)
+				arr[i]++;
+		}
+
+		int result = 0;
+		for (int i = 0; i < MAX; i++)
+			result = max(result, arr[i]);
+		cout << '#' << tc << ' ' << result << '\n';
 	}
 	return 0;
 }
