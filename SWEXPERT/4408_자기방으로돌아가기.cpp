@@ -33,16 +33,19 @@ int main()
 			if (a > b)
 				swap(a, b);
 
+			// 홀수라면 1을 더해준다.
 			if (a % 2 == 1)
 				a++;
 			if (b % 2 == 1)
 				b++;
 
+			// a, b를 절반으로 나눈 범위에 모두 1을 증가
 			for(int i = a/2; i<=b/2; i++)
 				arr[i]++;
 		}
 
 		int result = 0;
+		// 최대값 찾기
 		for (int i = 0; i < MAX; i++)
 			result = max(result, arr[i]);
 		cout << '#' << tc << ' ' << result << '\n';
