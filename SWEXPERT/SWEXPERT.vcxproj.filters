@@ -90,6 +90,15 @@
     <ClCompile Include="6731_홍익이의 오델로 게임.cpp">
       <Filter>소스 파일\D4</Filter>
     </ClCompile>
+    <ClCompile Include="1808_지희의 고장난 계산기.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
+    <ClCompile Include="1494_사랑의 카운슬러.cpp">
+      <Filter>소스 파일\D4</Filter>
+    </ClCompile>
+    <ClCompile Include="2105_디저트카페.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">

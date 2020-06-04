@@ -9,7 +9,7 @@ using namespace std;
 
 typedef long long ll;
 
-int num[10] = { 0, 1, 0, 7, 0, 0, 0, 3, 0, 9 };
+int x[10] = { 0, 1, 0, 7, 0, 0, 0, 3, 0, 9 };
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);

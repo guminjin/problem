@@ -15,7 +15,7 @@ const int INF = 987654321;
 int n;
 int numSize, operSize;	// 숫자와 연산의 개수
 int result = -INF;		
-int num[MAX];			// 숫자 저장
+int x[MAX];			// 숫자 저장
 char oper[MAX];			// 연산 저장
 int group[MAX];			// 괄호를 만들 수 있는 모든 연산의 결과값 저장
 bool visited[MAX];		// 괄호를 사용하였는지 체크
@@ -52,7 +52,7 @@ void mxresult()
 		{
 			// 첫번째 연산이라면
 			if (i == 0)
-				sum = num[0];
+				sum = x[0];
 
 			// 다음 연산이 괄호로 묶여서 이미 계산되어있다면
 			if (visited[i + 1])
@@ -61,7 +61,7 @@ void mxresult()
 				i += 1;
 			}
 			else
-				sum = cal(oper[i], sum, num[i + 1]);
+				sum = cal(oper[i], sum, x[i + 1]);
 		}
 	}
 	// 최대값 비교
@@ -108,7 +108,7 @@ void input()
 	int idx = 0;
 	for (int i = 0; i < numSize; i++)
 	{
-		num[i] = (s[idx] - '0');
+		x[i] = (s[idx] - '0');
 		idx += 2;
 	}
 
@@ -124,7 +124,7 @@ void input()
 	int numIdx = 0;
 	for (int i = 0; i < operSize; i++)
 	{
-		group[i] = cal(oper[i], num[numIdx], num[numIdx + 1]);
+		group[i] = cal(oper[i], x[numIdx], x[numIdx + 1]);
 		numIdx++;
 	}
 }
@@ -134,7 +134,7 @@ int main()
 
 	input();
 	if (n == 1)
-		cout << num[0] << '\n';
+		cout << x[0] << '\n';
 	else
 	{
 		dfs(0);
