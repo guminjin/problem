@@ -18,7 +18,7 @@ int main()
 	int t; cin >> t;
 	for (int tc = 1; tc <= t; tc++)
 	{
-		cout << '#' << tc << ' ';
+		cout << '#' << tc << ' ' << '\n';
 	}
 	return 0;
 }

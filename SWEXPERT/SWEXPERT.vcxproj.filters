@@ -102,6 +102,9 @@
     <ClCompile Include="1949_등산로 조성.cpp">
       <Filter>소스 파일\모의</Filter>
     </ClCompile>
+    <ClCompile Include="2112_보호필름.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
