@@ -9,15 +9,15 @@ using namespace std;
 
 typedef long long ll;
 
-const int MAX_GARO = 20 + 1;
-const int MAX_SERO = 13 + 1;
-const int INF = 987654321;
+const int max_garo = 20 + 1;
+const int max_sero = 13 + 1;
+const int inf = 987654321;
 
 int garo, sero, k;
-int m[MAX_SERO][MAX_GARO];
+int m[max_sero][max_garo];
 int mn;
 
-bool checkTest()
+bool checktest()
 {
 	for (int x = 0; x < garo; x++)
 	{
@@ -45,41 +45,41 @@ bool checkTest()
 	return true;
 }
 
-void copyArr(int copy[MAX_GARO], int y)
+void copyarr(int copy[max_garo], int y)
 {
 	for (int x = 0; x < garo; x++)
 		copy[x] = m[y][x];
 }
-void changeOneLine(int y, int ab)
+void changeoneline(int y, int ab)
 {
 	for (int x = 0; x < garo; x++)
 		m[y][x] = ab;
 }
-void inputMedicine(int start, int cnt)
+void inputmedicine(int start, int cnt)
 {
 	if (cnt >= mn)
 		return;
 
 	if (start >= sero)
 	{
-		if (checkTest())
+		if (checktest())
 			mn = min(cnt, mn);
 		return;
 	}
 
 	// ¾È»Ñ¸±¶§
-	inputMedicine(start + 1, cnt);
+	inputmedicine(start + 1, cnt);
 
-	int origin[MAX_GARO];
-	copyArr(origin, start);
+	int origin[max_garo];
+	copyarr(origin, start);
 
-	// A »Ñ¸±¶§
-	changeOneLine(start, 0);
-	inputMedicine(start + 1, cnt + 1);
+	// a »Ñ¸±¶§
+	changeoneline(start, 0);
+	inputmedicine(start + 1, cnt + 1);
 
-	// B »Ñ¸±¶§
-	changeOneLine(start, 1);
-	inputMedicine(start + 1, cnt + 1);
+	// b »Ñ¸±¶§
+	changeoneline(start, 1);
+	inputmedicine(start + 1, cnt + 1);
 
 
 	for (int x = 0; x < garo; x++)
@@ -101,16 +101,16 @@ void input()
 
 void solve()
 {
-	mn = INF;
+	mn = inf;
 
 	input();
 
 	bool flg = true;
 
-	if (checkTest())
+	if (checktest())
 		mn = 0;
 	else
-		inputMedicine(0, 0);
+		inputmedicine(0, 0);
 }
 
 int main()
@@ -125,3 +125,4 @@ int main()
 	}
 	return 0;
 }
+int arr[100][100];

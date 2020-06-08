@@ -105,6 +105,12 @@
     <ClCompile Include="2112_보호필름.cpp">
       <Filter>소스 파일\모의</Filter>
     </ClCompile>
+    <ClCompile Include="2477_차량정비소.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
+    <ClCompile Include="2382_미생물격리.cpp">
+      <Filter>소스 파일\모의</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">

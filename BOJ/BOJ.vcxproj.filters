@@ -207,5 +207,14 @@
     <ClCompile Include="1600_말이되고픈원숭이.cpp">
       <Filter>소스 파일\1000-1999</Filter>
     </ClCompile>
+    <ClCompile Include="15969_행복.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
+    <ClCompile Include="15970_화살표그리기.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
+    <ClCompile Include="15970_두 로봇.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
