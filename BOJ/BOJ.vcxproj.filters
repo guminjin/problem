@@ -216,5 +216,20 @@
     <ClCompile Include="15970_두 로봇.cpp">
       <Filter>소스 파일\15000-15999</Filter>
     </ClCompile>
+    <ClCompile Include="15973_두박스.cpp">
+      <Filter>소스 파일\15000-15999</Filter>
+    </ClCompile>
+    <ClCompile Include="14696_딱지놀이.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="14697_방배정하기.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="14863_서울에서 경산까지.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
+    <ClCompile Include="14864_줄서기.cpp">
+      <Filter>소스 파일\14000-14999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
