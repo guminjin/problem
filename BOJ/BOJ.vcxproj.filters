@@ -231,5 +231,8 @@
     <ClCompile Include="14864_줄서기.cpp">
       <Filter>소스 파일\14000-14999</Filter>
     </ClCompile>
+    <ClCompile Include="1654_랜선자르기.cpp">
+      <Filter>소스 파일\1000-1999</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

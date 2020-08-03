@@ -232,6 +232,7 @@
     <ClCompile Include="1600_말이되고픈원숭이.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="1654_랜선자르기.cpp" />
     <ClCompile Include="16637_괄호추가하기.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
